@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1B: CSS-only inline emphasis | PDF-to-HTML accessibility tests</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <p><a href="index.html">All test cases</a></p>
+      <h1>Test 1B: CSS-only inline emphasis</h1>
+    </header>
+    <div class="test-meta">
+      <p>
+        <strong>Variation:</strong> Inline emphasis marked up with &lt;span class="italic"&gt; and
+        &lt;span class="bold"&gt; plus CSS. No page markers or navigation; only the emphasis markup
+        is under test.
+      </p>
+      <p>
+        <strong>Test:</strong> Read the paragraphs continuously with a screen reader. Note whether
+        each emphasized phrase is announced, whether it breaks the sentence into separate chunks,
+        and whether the sentence still reads naturally. Record browser and screen reader.
+      </p>
+    </div>
+
+    <article class="document" aria-label="Sample document">
+      <p>
+        This is a <span class="italic">test</span> of the
+        <span class="bold">emergency alert system</span>. The
+        <span class="bold">emergency alert system</span> is a useful tool for ensuring that citizens
+        are aware of emergencies.
+      </p>
+      <p>
+        Residents should follow the guidance in
+        <span class="italic">The Public Safety Handbook</span> and keep a battery-powered radio
+        nearby. Instructions marked <span class="bold">do not travel</span> apply to everyone in the
+        affected area, even if conditions appear <span class="italic">calm</span>.
+      </p>
+      <p>
+        A warning can be <span class="bold italic">both urgent and specific</span>, and it should be
+        repeated through <span class="bold">sirens</span>, <span class="bold">text messages</span>,
+        and <span class="bold">radio broadcasts</span> until the threat has passed.
+      </p>
+    </article>
+  </body>
+</html>

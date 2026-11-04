@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1A: Native inline emphasis | PDF-to-HTML accessibility tests</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <p><a href="index.html">All test cases</a></p>
+      <h1>Test 1A: Native inline emphasis</h1>
+    </header>
+    <div class="test-meta">
+      <p>
+        <strong>Variation:</strong> Inline emphasis marked up with native &lt;em&gt; and
+        &lt;strong&gt;. No page markers or navigation; only the emphasis markup is under test.
+      </p>
+      <p>
+        <strong>Test:</strong> Read the paragraphs continuously with a screen reader. Note whether
+        each emphasized phrase is announced, whether it breaks the sentence into separate chunks,
+        and whether the sentence still reads naturally. Record browser and screen reader.
+      </p>
+    </div>
+
+    <article class="document" aria-label="Sample document">
+      <p>
+        This is a <em>test</em> of the <strong>emergency alert system</strong>. The
+        <strong>emergency alert system</strong> is a useful tool for ensuring that citizens are
+        aware of emergencies.
+      </p>
+      <p>
+        Residents should follow the guidance in <em>The Public Safety Handbook</em> and keep a
+        battery-powered radio nearby. Instructions marked <strong>do not travel</strong> apply to
+        everyone in the affected area, even if conditions appear <em>calm</em>.
+      </p>
+      <p>
+        A warning can be <strong><em>both urgent and specific</em></strong
+        >, and it should be repeated through <strong>sirens</strong>,
+        <strong>text messages</strong>, and <strong>radio broadcasts</strong> until the threat has
+        passed.
+      </p>
+    </article>
+  </body>
+</html>

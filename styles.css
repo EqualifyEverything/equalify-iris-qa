@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+body {
+  max-width: 53rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem 4rem;
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid currentcolor;
+  outline-offset: 3px;
+}
+
+.test-meta {
+  border: 1px solid currentcolor;
+  padding: 0.7rem 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.test-meta p {
+  margin: 0.3rem 0;
+}
+
+.document {
+  margin-top: 2rem;
+}
+
+.document table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.document th,
+.document td {
+  border: 1px solid currentcolor;
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+nav.page-nav {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid currentcolor;
+}
+
+nav.page-nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  padding-left: 1.5rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Visible focus styling for fragment targets without changing their display mode */
+[role="doc-pagebreak"]:target {
+  outline: 2px dotted currentcolor;
+}
+
+hr[role="doc-pagebreak"] {
+  margin: 1.5rem 0;
+}

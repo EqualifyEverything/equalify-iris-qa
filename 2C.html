@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2C: Sections per source page | PDF-to-HTML accessibility tests</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <p><a href="index.html">All test cases</a></p>
+      <h1>Test 2C: Sections per source page</h1>
+    </header>
+    <div class="test-meta">
+      <p>
+        <strong>Variation:</strong> Four named section elements; paragraphs, lists and tables are
+        fragmented at page boundaries.
+      </p>
+      <p>
+        <strong>Test:</strong> Read continuously across source page boundaries and note whether each
+        page change is announced and whether it interrupts the sentence, list item or table cell.
+        Also navigate by landmark (or region) to move between pages. Record browser and screen
+        reader.
+      </p>
+      <p>
+        <strong>Note:</strong> Source page numbers are simulated, not browser print pages. Visual
+        layout is intentionally not paginated.
+      </p>
+    </div>
+
+    <article class="document" aria-label="Sample document">
+      <section id="page-1" aria-labelledby="page-title-1">
+        <h2 id="page-title-1">Page 1</h2>
+        <h3>Introduction</h3>
+        <p>
+          A public document can retain its reading order even when a printed page ends in the middle
+          of a sentence. The boundary in this example appears immediately after these words:
+        </p>
+      </section>
+      <section id="page-2" aria-labelledby="page-title-2">
+        <h2 id="page-title-2">Page 2</h2>
+        <p>
+          the remainder of the same sentence continues on the next numbered page. Readers should be
+          able to understand the sentence and, where supported, identify the original page boundary.
+        </p>
+        <p>
+          The editor used <strong>bold wording</strong> to stress the final decision and
+          <em>italic wording</em> for the name of a referenced publication.
+        </p>
+        <h3>Review checklist</h3>
+        <p>
+          The committee reviewed three practical considerations for converting a paginated PDF into
+          a reflowable HTML document.
+        </p>
+        <ol>
+          <li>Preserve heading structure so readers can move between meaningful sections.</li>
+          <li>
+            Retain the original order of related information, including material that crosses a page
+            boundary.
+          </li>
+        </ol>
+      </section>
+      <section id="page-3" aria-labelledby="page-title-3">
+        <h2 id="page-title-3">Page 3</h2>
+        <ol start="2">
+          <li>The second part of this list item continues on the next source page.</li>
+          <li>
+            Offer page correspondence for citations without requiring a screen reader user to
+            interpret visual layout.
+          </li>
+        </ol>
+        <h3>Review stages</h3>
+        <table>
+          <caption>
+            Review stages and outcomes, part one
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Stage</th>
+              <th scope="col">Activity</th>
+              <th scope="col">Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">A</th>
+              <td>Primary review</td>
+              <td>Reading order and heading structure</td>
+            </tr>
+            <tr>
+              <th scope="row">B</th>
+              <td>Secondary review</td>
+              <td>Page labels and link destinations</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="page-4" aria-labelledby="page-title-4">
+        <h2 id="page-title-4">Page 4</h2>
+        <table>
+          <caption>
+            Review stages and outcomes, part two
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Stage</th>
+              <th scope="col">Activity</th>
+              <th scope="col">Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">B (continued)</th>
+              <td>Continuation</td>
+              <td>This cell continues on the fourth source page.</td>
+            </tr>
+            <tr>
+              <th scope="row">C</th>
+              <td>Final review</td>
+              <td>Table navigation and list continuity</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Conclusion</h3>
+        <p>
+          The document ends after the fourth source page. The four page numbers refer to the source
+          PDF, not browser printing or reflowed screen pages.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF-to-HTML accessibility test suite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>PDF-to-HTML accessibility test suite</h1>
+      <p>
+        Nine standalone test cases for evaluating semantic inline styling, source page boundaries,
+        and page navigation in ordinary HTML documents. No EPUB reader, dependencies, or server-side
+        code needed. Converted from the source document with Chatgpt then edited manually to fix some minor errors. Used Claude code to add linting and prettier, fix source formatting consistantly across the codebase, and ask questions about gh pages operations for organization owned repos.
+      </p>
+      <p>
+        Every case uses similar example content and simulates four source PDF pages. These are HTML
+        reading-flow tests, not a visual PDF reproduction. In the HR and section cases, cross-page
+        content must be split, which is itself part of the comparison.
+      </p>
+      <h2>Set 1: Inline emphasis</h2>
+      <ul>
+        <li><a href="1A.html">1A: Native em and strong</a></li>
+        <li><a href="1B.html">1B: CSS-only spans</a></li>
+      </ul>
+      <h2>Set 2: Page boundaries</h2>
+      <ul>
+        <li><a href="2A.html">2A: Inline doc-pagebreak spans</a></li>
+        <li><a href="2B.html">2B: HR elements with doc-pagebreak</a></li>
+        <li><a href="2C.html">2C: Named section per page</a></li>
+      </ul>
+      <h2>Set 3: Page navigation</h2>
+      <ul>
+        <li><a href="3A.html">3A: No page navigation (control)</a></li>
+        <li><a href="3B.html">3B: Static nav landmark with links</a></li>
+        <li><a href="3C.html">3C: Nav landmark inside a disclosure</a></li>
+        <li><a href="3D.html">3D: JavaScript-generated nav landmark</a></li>
+      </ul>
+      <h2>Suggested test tasks</h2>
+      <ol>
+        <li>
+          Read from the start through each page boundary and report whether the page change is
+          announced and whether it interrupts the sentence, list, or table.
+        </li>
+        <li>
+          Navigate by headings, lists, tables, and landmarks and describe unexpected differences.
+        </li>
+        <li>
+          For Set 3, find the navigation controls, jump to page 3, and report where reading resumes.
+        </li>
+        <li>
+          For 3D, disable JavaScript and check whether the page markers are still present but
+          navigation controls disappear.
+        </li>
+        <li>
+          Record browser, browser version, OS, assistive technology/version, and whether you were
+          using browse or focus mode.
+        </li>
+      </ol>
+      <p>
+        Important: these examples deliberately avoid styling the span markers as blocks. That is a
+        separate experiment worth adding if needed. Page fragment link behavior and screen reader
+        announcements can differ.
+      </p>
+    </main>
+  </body>
+</html>

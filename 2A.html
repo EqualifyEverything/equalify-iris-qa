@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2A: Inline span pagebreak markers | PDF-to-HTML accessibility tests</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <p><a href="index.html">All test cases</a></p>
+      <h1>Test 2A: Inline span pagebreak markers</h1>
+    </header>
+    <div class="test-meta">
+      <p>
+        <strong>Variation:</strong> Four inline doc-pagebreak spans, no page navigation. The second
+        begins within a paragraph; later ones appear inside a list item and table cell.
+      </p>
+      <p>
+        <strong>Test:</strong> Read continuously across source page boundaries and note whether each
+        page change is announced and whether it interrupts the sentence, list item or table cell.
+        Record browser and screen reader.
+      </p>
+      <p>
+        <strong>Note:</strong> Source page numbers are simulated, not browser print pages. Visual
+        layout is intentionally not paginated.
+      </p>
+    </div>
+
+    <article class="document" aria-label="Sample document">
+      <span id="page-1" role="doc-pagebreak" aria-label="Page 1"></span>
+      <h2>Introduction</h2>
+      <p>
+        A public document can retain its reading order even when a printed page ends in the middle
+        of a sentence. The boundary in this example appears immediately after these words:
+        <span id="page-2" role="doc-pagebreak" aria-label="Page 2"></span> the remainder of the same
+        sentence continues on the next numbered page. Readers should be able to understand the
+        sentence and, where supported, identify the original page boundary.
+      </p>
+      <p>
+        The editor used <strong>bold wording</strong> to stress the final decision and
+        <em>italic wording</em> for the name of a referenced publication.
+      </p>
+      <h2>Review checklist</h2>
+      <p>
+        The committee reviewed three practical considerations for converting a paginated PDF into a
+        reflowable HTML document.
+      </p>
+      <ol>
+        <li>Preserve heading structure so readers can move between meaningful sections.</li>
+        <li>
+          Retain the original order of related information, including material that crosses a page
+          boundary.
+          <span id="page-3" role="doc-pagebreak" aria-label="Page 3"></span> The second part of this
+          list item continues on the next source page.
+        </li>
+        <li>
+          Offer page correspondence for citations without requiring a screen reader user to
+          interpret visual layout.
+        </li>
+      </ol>
+      <h2>Review stages</h2>
+      <table>
+        <caption>
+          Review stages and outcomes
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Stage</th>
+            <th scope="col">Activity</th>
+            <th scope="col">Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">A</th>
+            <td>Primary review</td>
+            <td>Reading order and heading structure</td>
+          </tr>
+          <tr>
+            <th scope="row">B</th>
+            <td>Secondary review</td>
+            <td>
+              Page labels and link destinations
+              <span id="page-4" role="doc-pagebreak" aria-label="Page 4"></span>
+              This cell continues on the fourth source page.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">C</th>
+            <td>Final review</td>
+            <td>Table navigation and list continuity</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Conclusion</h2>
+      <p>
+        The document ends after the fourth source page. The four page numbers refer to the source
+        PDF, not browser printing or reflowed screen pages.
+      </p>
+    </article>
+  </body>
+</html>
